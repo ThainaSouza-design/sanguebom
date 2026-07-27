@@ -61,7 +61,7 @@
     navHTML +
     "  </nav>" +
     '  <div class="Doar">' +
-    '    <a href="#">' +
+    '    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">' +
     '      <img src="' + coracao + '" alt="coração">' +
     "      <span>Quero Doar</span>" +
     "    </a>" +
@@ -106,10 +106,10 @@
     "      </li>" +
     "    </ul>" +
     '    <div class="footer__redes">' +
-    '      <a href="https://facebook.com/sanguebom">' +
+    '      <a href="https://facebook.com" target="_blank" rel="noopener">' +
     '        <img width="50" height="50" src="https://img.icons8.com/ios/50/ffffff/facebook--v1.png" alt="Facebook">' +
     "      </a>" +
-    '      <a href="https://instagram.com/sanguebom">' +
+    '      <a href="https://instagram.com" target="_blank" rel="noopener">' +
     '        <img width="50" height="50" src="https://img.icons8.com/ios/50/ffffff/instagram-new--v1.png" alt="Instagram">' +
     "      </a>" +
     "    </div>" +
@@ -118,14 +118,13 @@
     "</footer>";
 
   // Chamada "Já conferiu tudo?" — fica logo acima do rodapé.
-  // O botão "Quero doar agora" segue sem função (#).
   var ctaHTML =
     '<section class="cta-doar">' +
     '  <div class="cta-doar__texto">' +
     "    <h2>Já conferiu tudo?</h2>" +
     "    <p>Se você atende aos critérios, doe sangue e ajude a salvar até 4 vidas.</p>" +
     "  </div>" +
-    '  <a href="#" class="btn-doar">' +
+    '  <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn-doar">' +
     '    <img src="' + coracao + '" alt="Coração">' +
     "    Quero doar agora" +
     "  </a>" +

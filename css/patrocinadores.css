@@ -212,12 +212,13 @@
 .botao{
   flex-shrink: 0;
 }
-.botao button{
+.botao a{
   display: flex;
   align-items: center;
   gap: 10px;
   background-color: var(--vemelho-escuro);
   color: var(--branco);
+  text-decoration: none;
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -226,6 +227,6 @@
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-.botao button:hover{
+.botao a:hover{
   background-color: #7F0000;
 }

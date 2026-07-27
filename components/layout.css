@@ -250,6 +250,11 @@ html {
   padding: 14px 28px;
   border-radius: 11px;
   white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.btn-doar:hover {
+  transform: translateY(-8px);
 }
 
 .btn-doar img {
