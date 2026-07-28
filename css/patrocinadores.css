@@ -260,6 +260,12 @@
 .btn-patrocinador:hover{
   transform: scale(1.1);
 }
+@media (max-width: 860px) {
+  .containerpatrocinadores{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 640px) {
   .containersejaum{
     justify-content: center;
@@ -267,5 +273,23 @@
   }
   .btn-patrocinador{
     margin: 0 auto;
+  }
+
+  .containermaster {
+    padding: 24px 16px;
+  }
+
+  .imagem {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .imagem img {
+    width: 140px;
+  }
+
+  .containerpatrocinadores{
+    grid-template-columns: 1fr;
   }
 }
