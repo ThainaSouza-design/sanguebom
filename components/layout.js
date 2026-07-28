@@ -19,6 +19,7 @@
   var pagesDir = inPages ? "" : "pages/";
 
   var logo = root + "assets/img/Logo.png";
+  var logoRodape = root + "assets/img/logo-rodape.png";
   var coracao = root + "assets/img/Polygon 2.png";
 
   // Identifica a página atual para destacar o item de menu correspondente.
@@ -71,7 +72,7 @@
   var footerHTML =
     '<footer class="footer" id="footer">' +
     '  <div class="footer__sobre">' +
-    '    <img width="70" height="80" src="' + logo + '" alt="Sangue Bom">' +
+    '    <img width="70" height="80" src="' + logoRodape + '" alt="Sangue Bom">' +
     "    <p>Incentivar e facilitar a doação de sangue, conectando pessoas e salvando vidas.</p>" +
     "  </div>" +
     '  <nav class="footer__links">' +
