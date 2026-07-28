@@ -59,14 +59,21 @@
     '    <div class="logo">' +
     '      <a href="' + root + 'index.html"><img src="' + logo + '" alt="Sangue Bom"></a>' +
     "    </div>" +
-    '    <nav class="navbar">' +
+    '    <nav class="navbar" id="site-nav">' +
     navHTML +
     "    </nav>" +
-    '    <div class="Doar">' +
-    '      <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">' +
-    '        <img src="' + coracao + '" alt="coração">' +
-    "        <span>Quero Doar</span>" +
-    "      </a>" +
+    '    <div class="header__actions">' +
+    '      <div class="Doar">' +
+    '        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">' +
+    '          <img src="' + coracao + '" alt="coração">' +
+    "          <span>Quero Doar</span>" +
+    "        </a>" +
+    "      </div>" +
+    '      <button type="button" class="nav-toggle" id="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menu">' +
+    '        <span class="nav-toggle__bar"></span>' +
+    '        <span class="nav-toggle__bar"></span>' +
+    '        <span class="nav-toggle__bar"></span>' +
+    "      </button>" +
     "    </div>" +
     "  </div>" +
     "</header>";
@@ -161,6 +168,65 @@
       document.body.insertBefore(nodeFrom(headerHTML), document.body.firstChild);
     }
     fixHeaderSpacing();
+    bindNavToggle();
+  }
+
+  // Menu mobile (hambúrguer): abre/fecha o .navbar em telas estreitas.
+  // O painel usa position:absolute (ver CSS), então abrir/fechar nunca
+  // muda header.offsetHeight — é isso que mantém fixHeaderSpacing() correto.
+  function bindNavToggle() {
+    var toggle = document.getElementById("nav-toggle");
+    var nav = document.getElementById("site-nav");
+    if (!toggle || !nav) return;
+
+    function openNav() {
+      nav.classList.add("is-open");
+      toggle.classList.add("is-active");
+      toggle.setAttribute("aria-expanded", "true");
+    }
+
+    function closeNav() {
+      nav.classList.remove("is-open");
+      toggle.classList.remove("is-active");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (nav.classList.contains("is-open")) {
+        closeNav();
+      } else {
+        openNav();
+      }
+    });
+
+    var links = nav.querySelectorAll("a");
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", closeNav);
+    }
+
+    document.addEventListener("click", function (event) {
+      if (!nav.classList.contains("is-open")) return;
+      if (nav.contains(event.target) || toggle.contains(event.target)) return;
+      closeNav();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && nav.classList.contains("is-open")) {
+        closeNav();
+        toggle.focus();
+      }
+    });
+
+    var desktopQuery = window.matchMedia("(min-width: 1501px)");
+    function handleDesktopChange(e) {
+      if (e.matches) closeNav();
+    }
+    if (desktopQuery.addEventListener) {
+      desktopQuery.addEventListener("change", handleDesktopChange);
+    } else if (desktopQuery.addListener) {
+      desktopQuery.addListener(handleDesktopChange);
+    }
   }
 
   // O header fica fixo no topo (position: fixed), então some do fluxo
