@@ -82,7 +82,7 @@ body {
 }
 
 .requisitoBasico span {
-  color: #dd1d27;
+  color: #920000;
 }
 
 .requisitoBasico p {
@@ -118,7 +118,7 @@ body {
 }
 
 .outrosCriterios span {
-  color: #dd1d27;
+  color: #920000;
 }
 
 .accordion {
@@ -160,14 +160,16 @@ body {
   font-size: 1rem;
   padding-left: 78px;
   opacity: 0;
-  height: 0;
-  transition: opacity 0.3s;
+  max-height: 0;
+  transition: opacity 0.3s, max-height 0.3s;
   overflow: hidden;
 }
 
-.descricao.active {
-  height: 100%;
+.descricao.active,
+.accordionContent:hover .descricao {
+  max-height: 300px;
   opacity: 1;
+  transition: opacity 1.3s, max-height 1.3s;
 }
 
 .itemSeis {
@@ -199,7 +201,8 @@ body {
   transition: transform 0.2s linear;
 }
 
-.accordionContent:has(.active) .arrow {
+.accordionContent:has(.active) .arrow,
+.accordionContent:hover .arrow {
   transform: rotate(180deg);
 }
 
