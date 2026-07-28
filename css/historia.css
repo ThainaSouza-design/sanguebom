@@ -24,7 +24,7 @@ body {
 
 .title h1 {
     font-size: 48px;
-    color: #DD1D27;
+    color: #920000;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -64,6 +64,11 @@ body {
     overflow: hidden;
     background-color: #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
 }
 
 .story-image {
@@ -107,7 +112,7 @@ body {
 .story-info {
     display: flex;
     flex-direction: column;
-    border-top: 2px solid #DD1D27;
+    border-top: 2px solid #920000;
     padding-top: 8px;
     width: 100%;
     margin-right: 15px;
@@ -116,7 +121,7 @@ body {
 .story-name {
     font-size: 18px;
     font-weight: bold;
-    color: #DD1D27;
+    color: #920000;
 }
 
 .story-detail {
@@ -138,7 +143,7 @@ body {
 
 .invitation-title {
     font-size: 36px;
-    color: #DD1D27;
+    color: #920000;
     font-weight: bold;
     margin-bottom: 20px;
     line-height: 1.2;
