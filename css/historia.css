@@ -162,12 +162,12 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 15px;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease;
     text-decoration: none;
 }
 
 .email-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .email-icon {

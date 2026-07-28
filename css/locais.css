@@ -316,11 +316,12 @@ body {
   font-size: 0.95rem;
   border-radius: 12px;
   padding: 14px 20px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.3s ease;
 }
 
 .locais-btn-todas:hover {
   background-color: var(--vermelho-escuro);
+  transform: scale(1.1);
 }
 
 /* ---------- Popup "Ver todas as unidades" ---------- */

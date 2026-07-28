@@ -247,5 +247,5 @@
 }
 .botao a:hover{
   background-color: #7F0000;
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }

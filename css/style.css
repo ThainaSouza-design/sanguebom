@@ -111,7 +111,7 @@ button:focus-visible {
 }
 
 .Doar:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }
 
 .Doar a {
@@ -188,7 +188,7 @@ button:focus-visible {
 }
 
 .botao:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -342,7 +342,7 @@ ul[role="list"] {
 }
 
 .botao-hero:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }
 
 .botao-hero img {
@@ -755,7 +755,7 @@ ul[role="list"] {
 }
 
 .btn-doar:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }
 
 .footer {
