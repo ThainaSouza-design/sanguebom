@@ -287,7 +287,10 @@ ul[role="list"] {
   padding-bottom: 3rem;
 }
 
-.hero-titulo,
+.hero-titulo {
+  max-width: 36rem;
+}
+
 .hero-subtitulo {
   max-width: 28rem;
 }
@@ -296,7 +299,7 @@ ul[role="list"] {
   margin: 0;
   font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: 1.15;
   color: var(--branco);
 }
@@ -305,16 +308,16 @@ ul[role="list"] {
   margin: 0.75rem 0 0;
   font-family: var(--fonte-titulo);
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--branco);
 }
 
 .hero-texto {
   margin: 0.75rem 0 0;
   max-width: 22rem;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--branco);
 }
 
 .hero-botoes {
@@ -661,11 +664,15 @@ ul[role="list"] {
   }
 
   .hero-titulo {
-    font-size: 2.75rem;
+    font-size: 3.75rem;
   }
 
   .hero-subtitulo {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
+  }
+
+  .hero-texto {
+    font-size: 1.25rem;
   }
 
   .titulo {

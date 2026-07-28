@@ -24,10 +24,19 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  min-height: 22rem;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .home {
+    min-height: 30rem;
+  }
 }
 
 .containerUm {
-  padding: 116px 0 141px 78px;
+  padding: 0 0 0 78px;
 }
 
 .navBar {
@@ -239,11 +248,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .home {
-    padding-top: 50px;
-    height: 360px;
-  }
-
   .containerUm {
     padding: 0;
     margin-left: 20px;
@@ -327,6 +331,7 @@ body {
     background-image: none;
     background-color: #DD1D27;
     height: auto;
+    min-height: 22rem;
   }
 
   .containerUm {

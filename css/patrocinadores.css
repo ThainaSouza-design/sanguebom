@@ -22,40 +22,49 @@
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
-  min-height: 260px;
+  min-height: 20.3125rem;
   display: flex;
   align-items: center;
   overflow: hidden;
+  background-image: url("../assets/img/hospital.png");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+@media (max-width: 640px) {
+  .containerbanner {
+    background-position: left center;
+  }
 }
 .texto1 {
   position: relative;
   z-index: 3;
-  max-width: 520px;
-  padding: 40px 60px;
+  max-width: 560px;
+  width: 100%;
+  min-width: 0;
+  padding: 40px 24px 40px 78px;
+  box-sizing: border-box;
 }
 .texto1 h1 {
   font-weight: 800;
-  font-size: 42px;
+  font-size: 2.5rem;
   color: var(--branco);
   margin-bottom: 18px;
   letter-spacing: 1.5;
 }
 .texto1 p {
   color: var(--branco);
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 500px;
 }
-.hospital {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-.hospital img {
-  height: 100%;
-  width: auto;
-  object-fit: cover;
+@media (min-width: 48rem) {
+  .texto1 h1 {
+    font-size: 3.75rem;
+  }
+  .texto1 p {
+    font-size: 1.25rem;
+  }
 }
 .salvamosvidas {
   width: 100%;
