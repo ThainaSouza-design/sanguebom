@@ -20,7 +20,7 @@ body {
 
 .home {
   background-image: url(../assets/img/fundo-vermelho.png);
-  background-position: center;
+  background-position: center right;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -33,10 +33,21 @@ body {
   .home {
     min-height: 30rem;
   }
+
+  .containerUm h1 {
+    font-size: 3.75rem;
+  }
+
+  .containerUm p {
+    font-size: 1.25rem;
+  }
 }
 
 .containerUm {
-  padding: 0 0 0 78px;
+  max-width: 70rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .navBar {
@@ -58,13 +69,13 @@ body {
 
 .containerUm h1 {
   color: #ffffff;
-  font-size: 3.75rem;
+  font-size: 2.5rem;
   padding-bottom: 12px;
 }
 
 .containerUm p {
   color: #ffffff;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .requisitos {
@@ -265,14 +276,6 @@ body {
     text-align: left;
   }
 
-  .containerUm h1 {
-    font-size: 2.4rem;
-  }
-
-  .containerUm p {
-    font-size: 1rem;
-  }
-
   .requisitoBasico h2 {
     font-size: 1.8rem;
   }
@@ -338,36 +341,8 @@ body {
 }
 
 @media (max-width: 700px) {
-  .home {
-    background-image: none;
-    background-color: #DD1D27;
-    height: auto;
-    min-height: 22rem;
-  }
-
   .containerUm {
-    display: flex;
-    flex-direction: column;
     padding: 0 16px 50px 0;
-  }
-
-  .containerUm::after {
-    content: '';
-    background-image: url('../assets/img/Intersect.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: 260px;
-    width: 100%;
-    margin-top: 40px;
-  }
-
-  .containerUm h1 {
-    font-size: 2.5rem;
-  }
-
-  .containerUm p {
-    font-size: 1rem;
   }
 
   .requisitoBasico h2 {

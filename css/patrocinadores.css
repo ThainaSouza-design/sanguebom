@@ -31,18 +31,14 @@
   background-position: center right;
   background-repeat: no-repeat;
 }
-@media (max-width: 640px) {
-  .containerbanner {
-    background-position: left center;
-  }
-}
 .texto1 {
   position: relative;
   z-index: 3;
-  max-width: 560px;
+  max-width: 70rem;
   width: 100%;
   min-width: 0;
-  padding: 40px 24px 40px 78px;
+  margin: 0 auto;
+  padding: 40px 1.5rem;
   box-sizing: border-box;
 }
 .texto1 h1 {
@@ -59,6 +55,9 @@
   max-width: 500px;
 }
 @media (min-width: 48rem) {
+  .containerbanner {
+    min-height: 30rem;
+  }
   .texto1 h1 {
     font-size: 3.75rem;
   }
