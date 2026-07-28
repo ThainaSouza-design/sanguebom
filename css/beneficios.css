@@ -79,6 +79,7 @@ body {
     flex-wrap:wrap;
     gap:35px;
     margin-top:70px;
+    list-style: none;
 }
 
 .quadros{
