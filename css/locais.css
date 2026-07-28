@@ -440,14 +440,3 @@ body {
   }
 }
 
-@media (max-width: 540px) {
-  .locais-topbar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .locais-filtro,
-  .locais-geo {
-    justify-content: center;
-  }
-}
