@@ -91,7 +91,7 @@ body {
 }
 
 .locais-busca__icone {
-  color: var(--vermelho);
+  color: var(--vermelho-escuro);
   display: inline-flex;
   background: none;
   border: none;
@@ -118,7 +118,7 @@ body {
 }
 
 .locais-filtro[data-aberto="true"] .locais-filtro__botao {
-  border-color: var(--vermelho);
+  border-color: var(--vermelho-escuro);
 }
 
 .locais-filtro__icone {
@@ -159,7 +159,7 @@ body {
 }
 
 .locais-filtro__lista li.is-selected {
-  background-color: var(--vermelho);
+  background-color: var(--vermelho-escuro);
   color: #ffffff;
   font-weight: 600;
 }
@@ -170,7 +170,7 @@ body {
   gap: 8px;
   background: none;
   border: none;
-  color: var(--vermelho);
+  color: var(--vermelho-escuro);
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 500;
@@ -258,7 +258,7 @@ body {
 
 .locais-pin {
   flex: 0 0 auto;
-  color: var(--vermelho);
+  color: var(--vermelho-escuro);
   margin-top: 2px;
 }
 
