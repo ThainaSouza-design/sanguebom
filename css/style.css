@@ -387,7 +387,7 @@ ul[role="list"] {
 }
 
 .destaque:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }
 
 .icone-destaque {
@@ -479,7 +479,7 @@ ul[role="list"] {
 }
 
 .requisito:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }
 
 .requisito p {
@@ -518,7 +518,7 @@ ul[role="list"] {
 }
 
 .beneficio:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }
 
 .titulo-beneficio {
@@ -560,7 +560,7 @@ ul[role="list"] {
 }
 
 .historia:hover {
-  transform: translateY(-8px);
+  transform: scale(1.03);
 }
 
 .conteudo-historia {
@@ -616,7 +616,7 @@ ul[role="list"] {
 }
 
 .patrocinador-destaque:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }
 
 .texto-patrocinador h3 {
@@ -648,7 +648,7 @@ ul[role="list"] {
 }
 
 .patrocinador:hover {
-  transform: translateY(-8px);
+  transform: scale(1.1);
 }
 
 .patrocinador p {
