@@ -314,8 +314,11 @@ body {
   color: #ffffff;
   font-weight: 600;
   font-size: 0.95rem;
+  font-family: inherit;
+  border: none;
   border-radius: 12px;
   padding: 14px 20px;
+  cursor: pointer;
   transition: background-color 0.2s ease, transform 0.3s ease;
 }
 
