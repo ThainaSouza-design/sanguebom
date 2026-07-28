@@ -235,8 +235,9 @@
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.3s ease;
 }
 .botao a:hover{
   background-color: #7F0000;
+  transform: translateY(-8px);
 }
