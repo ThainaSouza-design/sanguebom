@@ -55,17 +55,19 @@
 
   var headerHTML =
     '<header class="header">' +
-    '  <div class="logo">' +
-    '    <a href="' + root + 'index.html"><img src="' + logo + '" alt="Sangue Bom"></a>' +
-    "  </div>" +
-    '  <nav class="navbar">' +
+    '  <div class="header__inner">' +
+    '    <div class="logo">' +
+    '      <a href="' + root + 'index.html"><img src="' + logo + '" alt="Sangue Bom"></a>' +
+    "    </div>" +
+    '    <nav class="navbar">' +
     navHTML +
-    "  </nav>" +
-    '  <div class="Doar">' +
-    '    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">' +
-    '      <img src="' + coracao + '" alt="coração">' +
-    "      <span>Quero Doar</span>" +
-    "    </a>" +
+    "    </nav>" +
+    '    <div class="Doar">' +
+    '      <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">' +
+    '        <img src="' + coracao + '" alt="coração">' +
+    "        <span>Quero Doar</span>" +
+    "      </a>" +
+    "    </div>" +
     "  </div>" +
     "</header>";
 
@@ -157,6 +159,32 @@
       slot.replaceWith(nodeFrom(headerHTML));
     } else {
       document.body.insertBefore(nodeFrom(headerHTML), document.body.firstChild);
+    }
+    fixHeaderSpacing();
+  }
+
+  // O header fica fixo no topo (position: fixed), então some do fluxo
+  // normal da página. Aqui reservamos, dinamicamente, o mesmo espaço no
+  // topo do body (e no scroll para os links âncora, como "Contato") do
+  // tamanho real do header, já que sua altura varia entre páginas e
+  // larguras de tela.
+  function fixHeaderSpacing() {
+    var header = document.querySelector(".header");
+    if (!header) return;
+
+    function apply() {
+      var altura = header.offsetHeight + "px";
+      document.body.style.paddingTop = altura;
+      document.documentElement.style.scrollPaddingTop = altura;
+    }
+
+    apply();
+    window.addEventListener("load", apply);
+
+    if (window.ResizeObserver) {
+      new ResizeObserver(apply).observe(header);
+    } else {
+      window.addEventListener("resize", apply);
     }
   }
 

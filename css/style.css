@@ -56,6 +56,15 @@ button:focus-visible {
   height: auto;
 }
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--branco);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+.header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,14 +83,14 @@ button:focus-visible {
 }
 .navbar a:hover {
   transition: 0.2s;
- color: var(--vermelho);
- border-bottom: 2px solid var(--vermelho);
+ color: var(--vermelho-escuro);
+ border-bottom: 2px solid var(--vermelho-escuro);
 }
 .navbar .start {
-  color: var(--vermelho);
+  color: var(--vermelho-escuro);
   text-decoration: none;
   padding-bottom: 6px;
-  border-bottom: 2px solid var(--vermelho);
+  border-bottom: 2px solid var(--vermelho-escuro);
 }
 .navbar {
   display: flex;
