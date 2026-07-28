@@ -144,7 +144,7 @@ button:focus-visible {
   font-size: 0.8125rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--vermelho);
+  color: var(--vermelho-escuro);
 }
 
 .titulo {
@@ -427,7 +427,7 @@ ul[role="list"] {
 
 .texto-motivo .rotulo {
   margin: 0 0 0.5rem;
-  color: var(--vermelho);
+  color: var(--vermelho-escuro);
 }
 
 .texto-motivo .titulo {
@@ -566,7 +566,7 @@ ul[role="list"] {
   font-family: var(--fonte-titulo);
   font-weight: 700;
   font-size: 0.875rem;
-  color: var(--vermelho);
+  color: var(--vermelho-escuro);
 }
 
 .depoimento {
@@ -735,9 +735,13 @@ ul[role="list"] {
   font-family: var(--fonte-titulo)
 }
 
+.cta-doar h2 {
+  font-size: 2.025rem;
+}
 
 .cta-doar__texto p {
   margin-top: 8px;
+  font-size: 1.35rem;
   opacity: 0.9;
 }
 
