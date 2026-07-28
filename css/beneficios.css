@@ -13,9 +13,16 @@ body {
 }
 
 .beneficios-content{
-    width:1200px;
-    margin:auto;
-    padding:80px 0;
+    width: 100%;
+    max-width: 75rem;
+    margin: auto;
+    padding: 48px 1.5rem;
+}
+
+@media (min-width: 48rem) {
+    .beneficios-content {
+        padding: 80px 1.5rem;
+    }
 }
 
 .enunciado{
@@ -32,9 +39,15 @@ body {
 }
 
 .texto2 {
-  font-size: 4rem;
+  font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .texto2 {
+    font-size: 4rem;
+  }
 }
 
 .texto2 span{
@@ -53,7 +66,8 @@ body {
 }
 
 .texto3{
-    width:650px;
+    width: 100%;
+    max-width: 650px;
     margin:auto;
     line-height:28px;
     color:#333;
@@ -68,7 +82,8 @@ body {
 }
 
 .quadros{
-    width:330px;
+    width: 100%;
+    max-width: 330px;
     min-height:360px;
     border:1px solid #d8d8d8;
     border-radius:10px;
