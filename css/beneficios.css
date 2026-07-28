@@ -28,7 +28,7 @@ body {
   align-items: center;
   font-size:14px;
   margin-bottom:15px;
-  color: #DD1D27;
+  color: #920000;
 }
 
 .texto2 {
@@ -38,7 +38,7 @@ body {
 }
 
 .texto2 span{
-  color: #DD1D27;
+  color: #920000;
 }
 
 .divider {
@@ -100,7 +100,7 @@ body {
 .line{
     width:45px;
     height:2px;
-    background:#DD1D27;
+    background:#920000;
     margin:25px 0;
 }
 
