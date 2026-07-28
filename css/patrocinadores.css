@@ -94,6 +94,7 @@
 .containermaster {
   max-width: 900px;
   margin: 0 auto;
+  padding: 30px 30px;
 }
 .imagem {
   position: relative;
@@ -107,7 +108,8 @@
   transition: transform 0.3s ease;
 }
 .imagem:hover {
-  transform: translateY(-8px);
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
 }
 .tituloMaster h2 {
   margin: 0;
@@ -144,6 +146,7 @@
 .containerpatrocinadores{
   max-width: 1100px;
   margin: 0 auto;
+  padding: 20px 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
@@ -172,7 +175,8 @@
   transition: transform 0.3s ease;
 }
 .containerpatrocinadores>div:not(.titulopatrocinadores):hover{
-  transform: translateY(-8px);
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
 }
 .logowrapper{
   display: flex;
