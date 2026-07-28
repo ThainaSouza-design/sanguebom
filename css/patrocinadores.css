@@ -108,7 +108,7 @@
 }
 .tituloMaster h2 {
   margin: 0;
-  color: var(--vermelho-padrão);
+  color: var(--vemelho-escuro);
   font-weight: 800;
   font-size: 20px;
   letter-spacing: 1px;
@@ -129,6 +129,7 @@
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 4px;
+  color: var(--vemelho-escuro);
 }
 .texto3 p {
   font-size: 14px;
@@ -152,7 +153,7 @@
   margin-bottom: 40px;
 }
 .titulopatrocinadores h2{
-  color: var(--vermelho-padrão);
+  color: var(--vemelho-escuro);
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -186,6 +187,7 @@
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 12px;
+  color: var(--vemelho-escuro);
 }
 .textowrapper p{
   font-size: 13px;
@@ -221,7 +223,7 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 6px;
-  color: var(--vermelho-padrão);
+  color: var(--vemelho-escuro);
 }
 .text p{
   font-size: 15px;
