@@ -59,7 +59,7 @@
     '    <div class="logo">' +
     '      <a href="' + root + 'index.html"><img src="' + logo + '" alt="Sangue Bom"></a>' +
     "    </div>" +
-    '    <nav class="navbar" id="site-nav">' +
+    '    <nav class="navbar" id="site-nav" aria-label="Navegação principal">' +
     navHTML +
     "    </nav>" +
     '    <div class="header__actions">' +
@@ -84,9 +84,9 @@
     '    <img width="70" height="80" src="' + logoRodape + '" alt="Sangue Bom">' +
     "    <p>Incentivar e facilitar a doação de sangue, conectando pessoas e salvando vidas.</p>" +
     "  </div>" +
-    '  <nav class="footer__links">' +
+    '  <nav class="footer__links" aria-label="Links rápidos">' +
     "    <h3>Links Rápidos</h3>" +
-    "    <ul>" +
+    '    <ul role="list">' +
     '      <li><a href="' + pagesDir + 'criterios.html">Quem Pode Doar</a></li>' +
     '      <li><a href="' + pagesDir + 'beneficios.html">Benefícios</a></li>' +
     '      <li><a href="' + pagesDir + 'locais.html">Locais de Doação</a></li>' +
@@ -94,9 +94,9 @@
     '      <li><a href="' + pagesDir + 'patrocinadores.html">Patrocínio</a></li>' +
     "    </ul>" +
     "  </nav>" +
-    '  <nav class="footer__institucional">' +
+    '  <nav class="footer__institucional" aria-label="Institucional">' +
     "    <h3>Institucional</h3>" +
-    "    <ul>" +
+    '    <ul role="list">' +
     '      <li><a href="#">Política de Privacidade</a></li>' +
     '      <li><a href="#">Termos de Uso</a></li>' +
     '      <li><a href="#">Transparência</a></li>' +
@@ -105,7 +105,7 @@
     "  </nav>" +
     '  <div class="footer__contato">' +
     "    <h3>Fale Conosco</h3>" +
-    "    <ul>" +
+    '    <ul role="list">' +
     "      <li>" +
     '        <img width="80" height="80" src="https://img.icons8.com/ios/100/ffffff/whatsapp--v1.png" alt="WhatsApp">' +
     '        <a href="tel:+5511999999999">(11) 99999-9999</a>' +
