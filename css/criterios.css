@@ -99,6 +99,14 @@ body {
   cursor: pointer;
 }
 
+.items {
+  transition: transform 0.3s ease;
+}
+
+.items:hover {
+  transform: scale(1.1);
+}
+
 .items p {
   font-size: 1.25rem;
 }
