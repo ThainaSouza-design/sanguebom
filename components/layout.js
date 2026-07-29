@@ -316,7 +316,7 @@
   // realmente está na tela e encosta o nosso botão/painel bem ao lado,
   // com algumas tentativas porque o widget deles carrega de forma
   // assíncrona e pode levar um instante pra aparecer.
-  function a11ySincronizarComVLibras(tentativasRestantes) {
+  function a11ySincronizarComVLibras(tentativasRestantes, rectAnterior) {
     var vlibrasBotao = document.querySelector("[vw-access-button]");
     var meuBotao = document.getElementById("a11y-abrir");
     if (!meuBotao) return;
@@ -326,11 +326,35 @@
         setTimeout(function () {
           a11ySincronizarComVLibras(tentativasRestantes - 1);
         }, 400);
+      } else {
+        // Não deu pra medir a posição, mas melhor mostrar os botões
+        // (mesmo sem sincronia perfeita) do que deixá-los invisíveis pra sempre.
+        if (vlibrasBotao) vlibrasBotao.classList.add("a11y-vlibras-pronto");
+        meuBotao.classList.add("a11y-vlibras-pronto");
       }
       return;
     }
 
     var rect = vlibrasBotao.getBoundingClientRect();
+
+    // O botão deles já existe (offsetWidth > 0) mas ainda pode estar no meio
+    // da animação de entrada deles (desliza de baixo pra cima). Só finaliza
+    // quando a posição parar de mudar entre duas medições — senão a gente
+    // trava nosso botão numa posição provisória e ele "sobe" atrás deles.
+    var parado = rectAnterior &&
+      Math.abs(rect.top - rectAnterior.top) < 1 &&
+      Math.abs(rect.left - rectAnterior.left) < 1;
+
+    if (!parado && tentativasRestantes > 0) {
+      setTimeout(function () {
+        a11ySincronizarComVLibras(tentativasRestantes - 1, rect);
+      }, 150);
+      return;
+    }
+
+    vlibrasBotao.classList.add("a11y-vlibras-pronto");
+    meuBotao.classList.add("a11y-vlibras-pronto");
+
     var tamanho = Math.max(rect.width, rect.height);
     var topo = rect.top - tamanho - 12;
     var esquerda = rect.left + (rect.width - tamanho) / 2;

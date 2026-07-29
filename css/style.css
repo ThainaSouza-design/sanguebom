@@ -376,6 +376,12 @@ div[vw-access-button] {
   left: auto !important;
   right: 20px !important;
   bottom: 20px !important;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+div[vw-access-button].a11y-vlibras-pronto {
+  opacity: 1;
 }
 
 /* ---------- Acessibilidade: botão + painel ---------- */
@@ -396,6 +402,12 @@ div[vw-access-button] {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.a11y-abrir.a11y-vlibras-pronto {
+  opacity: 1;
 }
 
 .a11y-modal {
