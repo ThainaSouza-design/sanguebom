@@ -14,7 +14,7 @@
   --borda: #ECECEC;
 
   --fonte-titulo: "MuseoModerno", sans-serif;
-  --fonte-texto: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fonte-texto: "MuseoModerno", sans-serif;
 
   --raio-md: 16px;
   --sombra-cartao: 0 8px 24px rgba(0, 0, 0, 0.06);
