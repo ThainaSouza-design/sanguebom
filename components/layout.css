@@ -30,6 +30,277 @@ html {
   overflow: visible;
 }
 
+/* ---------- Acessibilidade: skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 2000;
+  background: #920000;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 0 0 8px 0;
+  font-family: "MuseoModerno", sans-serif;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* ---------- Acessibilidade: reduzir movimento ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Acessibilidade: efeitos do painel ---------- */
+
+html.a11y-fonte-legivel * {
+  font-family: Arial, Verdana, sans-serif !important;
+}
+
+html.a11y-negrito * {
+  font-weight: 700 !important;
+}
+
+html.a11y-linha-espacada * {
+  line-height: 1.9 !important;
+}
+
+html.a11y-letra-espacada * {
+  letter-spacing: 0.06em !important;
+}
+
+html.a11y-sem-imagens img {
+  visibility: hidden !important;
+}
+
+/* ---------- Acessibilidade: força o botão do VLibras (posição definida
+   pelo próprio script deles) a ficar ancorado no canto inferior direito,
+   pra nosso botão poder ficar exatamente ao lado dele. ---------- */
+
+div[vw-access-button] {
+  position: fixed !important;
+  top: auto !important;
+  left: auto !important;
+  right: 20px !important;
+  bottom: 20px !important;
+}
+
+/* ---------- Acessibilidade: botão + painel ---------- */
+
+.a11y-abrir {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  z-index: 1600;
+  width: 56px;
+  height: 56px;
+  border: none;
+  background: none;
+  box-shadow: none;
+  color: #920000;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.a11y-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(27, 27, 27, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.a11y-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.a11y-modal__painel {
+  width: 100%;
+  max-width: 420px;
+  max-height: min(80vh, 720px);
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+  font-family: "MuseoModerno", sans-serif;
+  color: #333;
+  transform: translateY(32px) scale(0.98);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.a11y-modal.is-open .a11y-modal__painel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.a11y-painel__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+
+.a11y-painel__cabecalho h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #920000;
+}
+
+.a11y-painel__fechar {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #333;
+  padding: 4px 8px;
+}
+
+.a11y-painel__corpo {
+  padding: 12px 20px 20px;
+}
+
+.a11y-painel__corpo section + section {
+  margin-top: 18px;
+}
+
+.a11y-painel__corpo h3 {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+}
+
+.a11y-grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.a11y-cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  padding: 14px 8px;
+  cursor: pointer;
+  font-family: inherit;
+  color: #333;
+  text-align: center;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.a11y-cartao:hover {
+  border-color: #920000;
+}
+
+.a11y-cartao.is-ativo {
+  border-color: #920000;
+  background: #fdeaea;
+}
+
+.a11y-cartao__icone {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #920000;
+}
+
+.a11y-cartao__label {
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.a11y-cartao__nivel {
+  font-size: 0.7rem;
+  color: #920000;
+  font-weight: 600;
+  min-height: 1em;
+}
+
+.a11y-painel__rodape {
+  padding: 14px 20px 18px;
+  border-top: 1px solid #eee;
+}
+
+.a11y-restaurar {
+  width: 100%;
+  background: #920000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.a11y-restaurar[hidden] {
+  display: none;
+}
+
+.a11y-restaurar:hover {
+  background: #700000;
+}
+
+/* ---------- Acessibilidade: lupa de conteúdo ---------- */
+
+.a11y-lupa {
+  position: fixed;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid #920000;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 3000;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  background: #fff;
+  display: none;
+}
+
+.a11y-lupa.ativa {
+  display: block;
+}
+
+.a11y-lupa__conteudo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+
 /* ---------- Cabeçalho / Menu ---------- */
 
 .header {
