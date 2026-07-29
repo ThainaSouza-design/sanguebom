@@ -2,7 +2,7 @@
   --vermelho-padrão: #dd1d27;
   --cinza-footer-e-bordas: #8b8b8b;
   --branco: #fff;
-  --vemelho-escuro: #920000;
+  --vermelho-escuro: #920000;
 }
 * {
   margin: 0;
@@ -216,12 +216,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--vemelho-escuro);
+  background-color: var(--vermelho-escuro);
   color: var(--branco);
   border: none;
   border-radius: 5px;
   padding: 10px;
-  font-size: 14x;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.2s ease;
