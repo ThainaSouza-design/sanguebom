@@ -11,6 +11,7 @@
 
 body {
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 .conteudoPrincipal {
@@ -23,7 +24,9 @@ body {
   background-position: center right;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   min-height: 22rem;
   display: flex;
   align-items: center;
