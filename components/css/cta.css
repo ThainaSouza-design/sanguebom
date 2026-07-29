@@ -1,0 +1,62 @@
+/* ==========================================================
+   Componente: Chamada "Já conferiu tudo?" (CTA)
+   Estilos isolados para a seção injetada por components/js/cta.js.
+   Seletores restritos a .cta-doar para não afetar o CSS próprio
+   de cada página.
+   ========================================================== */
+
+/* Blindagem: neutraliza resets globais agressivos de algumas páginas
+   (ex.: `* { text-transform: capitalize; overflow-x: hidden }`) que
+   vazariam para dentro do componente injetado. */
+.cta-doar,
+.cta-doar * {
+  box-sizing: border-box;
+  text-transform: none;
+  overflow: visible;
+}
+
+.cta-doar {
+  background-color: #920000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 40px 60px;
+  color: #fff;
+  font-family: "MuseoModerno", sans-serif;
+}
+
+.cta-doar h2 {
+  margin: 0;
+  font-size: 2.025rem;
+  font-weight: 700;
+}
+
+.cta-doar__texto p {
+  margin: 8px 0 0;
+  font-size: 1.35rem;
+  opacity: 0.9;
+}
+
+.btn-doar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #DD1D27;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 11px;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.btn-doar:hover {
+  transform: scale(1.1);
+}
+
+.btn-doar img {
+  width: 22px;
+  height: auto;
+}
