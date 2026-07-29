@@ -15,10 +15,24 @@
   <body>
     <main id="conteudo-principal" class="conteudoPrincipal">
       <!-- ============================================= -->
+      <!-- HERO: Encontre um hemocentro perto de você     -->
+      <!-- ============================================= -->
+      <section class="secao-hero" aria-label="Encontre um hemocentro perto de você">
+        <div class="contentor hero-conteudo">
+          <h1 class="hero-titulo">Encontre um<br />hemocentro perto<br />de você.</h1>
+          <p class="hero-texto">Doe onde for mais fácil para você<br />e ajude a salvar vidas.</p>
+        </div>
+      </section>
+
+      <!-- ============================================= -->
       <!-- Busca + lista de unidades + mapa               -->
       <!-- ============================================= -->
       <section class="locais">
         <div class="locais-container">
+
+          <header class="cabecalho-secao">
+            <h2 class="titulo">Encontre um <span>hemocentro</span></h2>
+          </header>
 
           <!-- Anuncia pra leitor de tela quando a lista de unidades muda (busca/filtro/geolocalização) -->
           <p id="locais-status-busca" class="oculto-visualmente" role="status" aria-live="polite"></p>
@@ -82,6 +96,37 @@
               <p class="locais-mapa__carregando">Carregando mapa…</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- ============================================= -->
+      <!-- Benefícios de doar em um hemocentro            -->
+      <!-- ============================================= -->
+      <section class="locais-garantias">
+        <div class="contentor">
+          <h2 class="locais-garantias__titulo">Ao doar em um hemocentro, você garante:</h2>
+
+          <ul class="locais-garantias__lista" role="list">
+            <li class="locais-garantias__item">
+              <img src="../assets/img/garantia-atendimento.png" alt="" class="locais-garantias__icone" width="34" height="30" />
+              <p>Atendimento seguro<br />e acolhedor</p>
+            </li>
+
+            <li class="locais-garantias__item">
+              <img src="../assets/img/garantia-estrutura.png" alt="" class="locais-garantias__icone" width="37" height="31" />
+              <p>Estrutura completa<br />para te receber</p>
+            </li>
+
+            <li class="locais-garantias__item">
+              <img src="../assets/img/garantia-processo.png" alt="" class="locais-garantias__icone" width="29" height="25" />
+              <p>Processo rápido<br />e humanizado</p>
+            </li>
+
+            <li class="locais-garantias__item">
+              <img src="../assets/img/garantia-impacto.png" alt="" class="locais-garantias__icone" width="37" height="36" />
+              <p>Impacto direto na vida<br />de quem precisa</p>
+            </li>
+          </ul>
         </div>
       </section>
 

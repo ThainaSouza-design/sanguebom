@@ -23,6 +23,7 @@
 
 body {
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 .conteudoPrincipal {
@@ -39,6 +40,55 @@ body {
   white-space: nowrap;
 }
 
+.contentor {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.secao-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  min-height: 22rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--vermelho);
+  background-image: url("../assets/img/hemocentro-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+  color: #ffffff;
+}
+
+.hero-conteudo {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.hero-titulo {
+  margin: 0;
+  max-width: 36rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.hero-texto {
+  margin: 0.75rem 0 0;
+  max-width: 26rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
 .locais {
   margin: 0 auto;
   max-width: 90%;
@@ -49,6 +99,24 @@ body {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+/* ---------- Título da seção ---------- */
+
+.cabecalho-secao {
+  text-align: center;
+}
+
+.titulo {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  color: #1b1b1b;
+}
+
+.titulo span {
+  color: var(--vermelho-escuro);
 }
 
 /* ---------- Barra de busca / filtro / geolocalização ---------- */
@@ -404,6 +472,55 @@ body {
   max-height: none;
 }
 
+/* ==========================================================
+   Benefícios de doar em um hemocentro
+   ========================================================== */
+
+.locais-garantias {
+  padding: 2.5rem 0 4rem;
+}
+
+.locais-garantias__titulo {
+  margin: 0 0 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #1b1b1b;
+}
+
+.locais-garantias__lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1rem;
+  max-width: 55rem;
+  margin: 0 auto;
+}
+
+.locais-garantias__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.locais-garantias__item:hover {
+  transform: scale(1.1);
+}
+
+.locais-garantias__icone {
+  display: block;
+  width: auto;
+  height: 2.25rem;
+}
+
+.locais-garantias__item p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--cinza);
+}
+
 /* ---------- Mapa (Google Maps) ---------- */
 
 .locais-mapa {
@@ -424,6 +541,32 @@ body {
   justify-content: center;
   color: var(--cinza-claro);
   font-size: 0.9rem;
+}
+
+/* ==========================================================
+   Responsivo — Desktop (>= 48rem / 768px)
+   ========================================================== */
+
+@media (min-width: 48rem) {
+  .secao-hero {
+    min-height: 30rem;
+  }
+
+  .hero-titulo {
+    font-size: 3.75rem;
+  }
+
+  .hero-texto {
+    font-size: 1.25rem;
+  }
+
+  .titulo {
+    font-size: 2.5rem;
+  }
+
+  .locais-garantias__lista {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* ---------- Responsivo ---------- */
