@@ -246,7 +246,6 @@ html, body {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   gap: 10px;
   background-color: var(--vermelho-escuro);
   color: var(--branco);
@@ -254,12 +253,10 @@ html, body {
   border-radius: 5px;
   padding: 10px;
   font-size: 14px;
-=======
   justify-content: center;
   gap: 8px;
   background-color: var(--vemelho-escuro);
   color: var(--branco);
->>>>>>> 40fcf9d55f5aba293152fbedf5d08c42644fd44b
   font-weight: 700;
   font-size: 15px;
   padding: 12px 26px;
