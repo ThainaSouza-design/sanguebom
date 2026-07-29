@@ -11,6 +11,8 @@
   border: none;
   text-decoration: none;
   font-family: 'MuseoModerno', sans-serif;
+}
+html, body {
   overflow-x: hidden;
 }
 .patrocinadoresbanner {
@@ -108,6 +110,7 @@
 .imagem:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  z-index: 1;
 }
 .tituloMaster h2 {
   margin: 0;
@@ -161,10 +164,11 @@
 .listapatrocinadores{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
   list-style: none;
 }
 .listapatrocinadores > li{
+  position: relative;
   border: 2px solid var(--cinza-footer-e-bordas);
   border-radius: 10px;
   padding: 30px 25px;
@@ -177,6 +181,7 @@
 .listapatrocinadores > li:hover{
   transform: scale(1.03);
   box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  z-index: 1;
 }
 .logowrapper{
   display: flex;
