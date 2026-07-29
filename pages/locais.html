@@ -10,12 +10,15 @@
     <title>Locais de Doação</title>
   </head>
   <body>
-    <main class="conteudoPrincipal">
+    <main id="conteudo-principal" class="conteudoPrincipal">
       <!-- ============================================= -->
       <!-- Busca + lista de unidades + mapa               -->
       <!-- ============================================= -->
       <section class="locais">
         <div class="locais-container">
+
+          <!-- Anuncia pra leitor de tela quando a lista de unidades muda (busca/filtro/geolocalização) -->
+          <p id="locais-status-busca" class="oculto-visualmente" role="status" aria-live="polite"></p>
 
           <!-- Barra de busca / filtro / geolocalização -->
           <div class="locais-topbar">
