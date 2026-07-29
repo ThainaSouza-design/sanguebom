@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
   text-decoration: none;
@@ -11,6 +11,7 @@
 
 body {
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 .conteudoPrincipal {
@@ -20,14 +21,36 @@ body {
 
 .home {
   background-image: url(../assets/img/fundo-vermelho.png);
-  background-position: center;
+  background-position: center right;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  min-height: 22rem;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .home {
+    min-height: 30rem;
+  }
+
+  .containerUm h1 {
+    font-size: 3.75rem;
+  }
+
+  .containerUm p {
+    font-size: 1.25rem;
+  }
 }
 
 .containerUm {
-  padding: 116px 0 141px 78px;
+  max-width: 70rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .navBar {
@@ -49,13 +72,11 @@ body {
 
 .containerUm h1 {
   color: #ffffff;
-  font-size: 3.75rem;
   padding-bottom: 12px;
 }
 
 .containerUm p {
   color: #ffffff;
-  font-size: 1.25rem;
 }
 
 .requisitos {
@@ -73,7 +94,7 @@ body {
 }
 
 .requisitoBasico span {
-  color: #dd1d27;
+  color: #920000;
 }
 
 .requisitoBasico p {
@@ -88,6 +109,14 @@ body {
   flex-wrap: wrap;
   gap: 85px;
   cursor: pointer;
+}
+
+.items {
+  transition: transform 0.3s ease;
+}
+
+.items:hover {
+  transform: scale(1.1);
 }
 
 .items p {
@@ -109,7 +138,7 @@ body {
 }
 
 .outrosCriterios span {
-  color: #dd1d27;
+  color: #920000;
 }
 
 .accordion {
@@ -151,14 +180,16 @@ body {
   font-size: 1rem;
   padding-left: 78px;
   opacity: 0;
-  height: 0;
-  transition: opacity 0.3s;
+  max-height: 0;
+  transition: opacity 0.3s, max-height 0.3s;
   overflow: hidden;
 }
 
-.descricao.active {
-  height: 100%;
+.descricao.active,
+.accordionContent:hover .descricao {
+  max-height: 300px;
   opacity: 1;
+  transition: opacity 1.3s, max-height 1.3s;
 }
 
 .itemSeis {
@@ -190,7 +221,8 @@ body {
   transition: transform 0.2s linear;
 }
 
-.accordionContent:has(.active) .arrow {
+.accordionContent:has(.active) .arrow,
+.accordionContent:hover .arrow {
   transform: rotate(180deg);
 }
 
@@ -239,23 +271,10 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .home {
-    padding-top: 50px;
-    height: 360px;
-  }
-
   .containerUm {
     padding: 0;
     margin-left: 20px;
     text-align: left;
-  }
-
-  .containerUm h1 {
-    font-size: 2.4rem;
-  }
-
-  .containerUm p {
-    font-size: 1rem;
   }
 
   .requisitoBasico h2 {
@@ -323,35 +342,8 @@ body {
 }
 
 @media (max-width: 700px) {
-  .home {
-    background-image: none;
-    background-color: #DD1D27;
-    height: auto;
-  }
-
   .containerUm {
-    display: flex;
-    flex-direction: column;
     padding: 0 16px 50px 0;
-  }
-
-  .containerUm::after {
-    content: '';
-    background-image: url('../assets/img/Intersect.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: 260px;
-    width: 100%;
-    margin-top: 40px;
-  }
-
-  .containerUm h1 {
-    font-size: 2.5rem;
-  }
-
-  .containerUm p {
-    font-size: 1rem;
   }
 
   .requisitoBasico h2 {
@@ -408,5 +400,16 @@ body {
 
   .btnWhatsApp p {
     font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -10,8 +10,9 @@
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
   font-family: 'MuseoModerno', sans-serif;
+}
+html, body {
   overflow-x: hidden;
 }
 .patrocinadoresbanner {
@@ -22,40 +23,48 @@
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
-  min-height: 260px;
+  min-height: 20.3125rem;
   display: flex;
   align-items: center;
   overflow: hidden;
+  background-image: url("../assets/img/hospital.png");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
 .texto1 {
   position: relative;
   z-index: 3;
-  max-width: 520px;
-  padding: 40px 60px;
+  max-width: 70rem;
+  width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 40px 1.5rem;
+  box-sizing: border-box;
 }
 .texto1 h1 {
   font-weight: 800;
-  font-size: 42px;
+  font-size: 2.5rem;
   color: var(--branco);
   margin-bottom: 18px;
   letter-spacing: 1.5;
 }
 .texto1 p {
   color: var(--branco);
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 500px;
 }
-.hospital {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-.hospital img {
-  height: 100%;
-  width: auto;
-  object-fit: cover;
+@media (min-width: 48rem) {
+  .containerbanner {
+    min-height: 30rem;
+  }
+  .texto1 h1 {
+    font-size: 3.75rem;
+  }
+  .texto1 p {
+    font-size: 1.25rem;
+  }
 }
 .salvamosvidas {
   width: 100%;
@@ -70,6 +79,9 @@
   font-weight: 800;
   font-size: 32px;
   margin-top: 24px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  color: #000;
 }
 .texto2 p {
   font-size: 15px;
@@ -82,6 +94,7 @@
 .containermaster {
   max-width: 900px;
   margin: 0 auto;
+  padding: 30px 30px;
 }
 .imagem {
   position: relative;
@@ -92,10 +105,16 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  transition: transform 0.3s ease;
+}
+.imagem:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  z-index: 1;
 }
 .tituloMaster h2 {
   margin: 0;
-  color: var(--vermelho-padrão);
+  color: var(--vemelho-escuro);
   font-weight: 800;
   font-size: 20px;
   letter-spacing: 1px;
@@ -116,6 +135,7 @@
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 4px;
+  color: var(--vemelho-escuro);
 }
 .texto3 p {
   font-size: 14px;
@@ -127,24 +147,28 @@
 .containerpatrocinadores{
   max-width: 1100px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  padding: 20px 20px;
 }
 .titulopatrocinadores{
-  grid-column: 1 / -1;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
 }
 .titulopatrocinadores h2{
-  color: var(--vermelho-padrão);
+  color: var(--vemelho-escuro);
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1px;
 }
-.containerpatrocinadores>div:not(.titulopatrocinadores){
+.listapatrocinadores{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  list-style: none;
+}
+.listapatrocinadores > li{
+  position: relative;
   border: 2px solid var(--cinza-footer-e-bordas);
   border-radius: 10px;
   padding: 30px 25px;
@@ -152,6 +176,12 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: transform 0.3s ease;
+}
+.listapatrocinadores > li:hover{
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  z-index: 1;
 }
 .logowrapper{
   display: flex;
@@ -169,6 +199,7 @@
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 12px;
+  color: var(--vemelho-escuro);
 }
 .textowrapper p{
   font-size: 13px;
@@ -184,6 +215,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 24px;
 }
 .slaimagem{
@@ -203,18 +235,18 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 6px;
+  color: var(--vemelho-escuro);
 }
 .text p{
   font-size: 15px;
   line-height: 2;
   margin: 0;
 }
-.botao{
+.btn-patrocinador{
   flex-shrink: 0;
-}
-.botao button{
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   gap: 10px;
   background-color: var(--vermelho-escuro);
   color: var(--branco);
@@ -222,10 +254,68 @@
   border-radius: 5px;
   padding: 10px;
   font-size: 14px;
+=======
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--vemelho-escuro);
+  color: var(--branco);
+>>>>>>> 40fcf9d55f5aba293152fbedf5d08c42644fd44b
   font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  font-size: 15px;
+  padding: 12px 26px;
+  border-radius: 12px;
+  white-space: nowrap;
+  margin-right: 16px;
+  transition: transform 0.3s ease;
 }
-.botao button:hover{
-  background-color: #7F0000;
+.btn-patrocinador__icon{
+  width: 22px;
+  height: auto;
+  flex-shrink: 0;
+}
+.btn-patrocinador:hover{
+  transform: scale(1.1);
+}
+@media (max-width: 860px) {
+  .listapatrocinadores{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .containersejaum{
+    justify-content: center;
+    text-align: center;
+  }
+  .btn-patrocinador{
+    margin: 0 auto;
+  }
+
+  .containermaster {
+    padding: 24px 16px;
+  }
+
+  .imagem {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .imagem img {
+    width: 140px;
+  }
+
+  .listapatrocinadores{
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

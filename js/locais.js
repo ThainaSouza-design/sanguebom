@@ -954,6 +954,14 @@
 
     var modalLista = document.getElementById("locais-modal-itens");
     if (modalLista) modalLista.innerHTML = html;
+
+    var status = document.getElementById("locais-status-busca");
+    if (status) {
+      var quantidade = indicesFiltrados.length;
+      status.textContent = quantidade === 1
+        ? "1 unidade encontrada"
+        : quantidade + " unidades encontradas";
+    }
   }
 
   // Aplica um novo ponto de referência (busca ou geolocalização):

@@ -4,18 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/locais.css" />
-    <link rel="stylesheet" href="../components/layout.css" />
+    <link rel="stylesheet" href="../components/css/header.css" />
+    <link rel="stylesheet" href="../components/css/footer.css" />
+    <link rel="stylesheet" href="../components/css/cta.css" />
+    <link rel="stylesheet" href="../components/css/acessibilidade.css" />
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="../assets/img/motivo-doacao.png" />
     <title>Locais de Doação</title>
   </head>
   <body>
-    <main class="conteudoPrincipal">
+    <main id="conteudo-principal" class="conteudoPrincipal">
+      <!-- ============================================= -->
+      <!-- HERO: Encontre um hemocentro perto de você     -->
+      <!-- ============================================= -->
+      <section class="secao-hero" aria-label="Encontre um hemocentro perto de você">
+        <div class="contentor hero-conteudo">
+          <h1 class="hero-titulo">Encontre um<br />hemocentro perto<br />de você.</h1>
+          <p class="hero-texto">Doe onde for mais fácil para você<br />e ajude a salvar vidas.</p>
+        </div>
+      </section>
+
       <!-- ============================================= -->
       <!-- Busca + lista de unidades + mapa               -->
       <!-- ============================================= -->
       <section class="locais">
         <div class="locais-container">
+
+          <header class="cabecalho-secao">
+            <h2 class="titulo">Encontre um <span>hemocentro</span></h2>
+          </header>
+
+          <!-- Anuncia pra leitor de tela quando a lista de unidades muda (busca/filtro/geolocalização) -->
+          <p id="locais-status-busca" class="oculto-visualmente" role="status" aria-live="polite"></p>
 
           <!-- Barra de busca / filtro / geolocalização -->
           <div class="locais-topbar">
@@ -66,16 +86,47 @@
                    todas as unidades reais; rola só aqui dentro. -->
               <ul class="locais-lista__itens" id="locais-lista-itens"></ul>
 
-              <a href="#" class="locais-btn-todas" id="locais-ver-todas">
+              <button type="button" class="locais-btn-todas" id="locais-ver-todas">
                 Ver todas as unidades
                 <span aria-hidden="true">→</span>
-              </a>
+              </button>
             </div>
 
             <div id="locais-map" class="locais-mapa" aria-label="Mapa com hemocentros e bancos de sangue próximos na região central de São Paulo">
               <p class="locais-mapa__carregando">Carregando mapa…</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- ============================================= -->
+      <!-- Benefícios de doar em um hemocentro            -->
+      <!-- ============================================= -->
+      <section class="locais-garantias">
+        <div class="contentor">
+          <h2 class="locais-garantias__titulo">Ao doar em um hemocentro, você garante:</h2>
+
+          <ul class="locais-garantias__lista" role="list">
+            <li class="locais-garantias__item">
+              <img src="../assets/img/garantia-atendimento.png" alt="" class="locais-garantias__icone" width="34" height="30" />
+              <p>Atendimento seguro<br />e acolhedor</p>
+            </li>
+
+            <li class="locais-garantias__item">
+              <img src="../assets/img/garantia-estrutura.png" alt="" class="locais-garantias__icone" width="37" height="31" />
+              <p>Estrutura completa<br />para te receber</p>
+            </li>
+
+            <li class="locais-garantias__item">
+              <img src="../assets/img/garantia-processo.png" alt="" class="locais-garantias__icone" width="29" height="25" />
+              <p>Processo rápido<br />e humanizado</p>
+            </li>
+
+            <li class="locais-garantias__item">
+              <img src="../assets/img/garantia-impacto.png" alt="" class="locais-garantias__icone" width="37" height="36" />
+              <p>Impacto direto na vida<br />de quem precisa</p>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -94,6 +145,11 @@
     </main>
     <script src="../js/locais.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFwHbg6IYvb1eYY-5W01_4eQHzJp5TJVE&callback=initLocaisMap" defer></script>
-    <script src="../components/layout.js" defer></script>
+    <script src="../components/js/core.js" defer></script>
+    <script src="../components/js/header.js" defer></script>
+    <script src="../components/js/footer.js" defer></script>
+    <script src="../components/js/cta.js" defer></script>
+    <script src="../components/js/acessibilidade.js" defer></script>
+    <script src="../components/js/main.js" defer></script>
   </body>
 </html>

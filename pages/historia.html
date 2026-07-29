@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,93 +7,105 @@
     <link rel="icon" type="image/png" href="../assets/img/motivo-doacao.png">
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/historia.css">
-    <link rel="stylesheet" href="../components/layout.css">
+    <link rel="stylesheet" href="../components/css/header.css">
+    <link rel="stylesheet" href="../components/css/footer.css">
+    <link rel="stylesheet" href="../components/css/cta.css">
+    <link rel="stylesheet" href="../components/css/acessibilidade.css">
 </head>
 <body>
+    <main id="conteudo-principal">
     <div class="container">
         <!-- TÍTULO -->
         <div class="title">
             <h1>Histórias que Inspiram</h1>
             <div class="divider">
-                <img src="../assets/icons/coracao-.png" alt="Divisor de Coração" class="divider-img">
+                <img src="../assets/icons/coracao-.png" alt="" class="divider-img">
             </div>
             <p class="subtitle">Cada história representa mais do que um gesto.<br>Representa esperança, solidariedade e vida.</p>
         </div>
 
         <!-- GRID DE HISTÓRIAS -->
-        <div class="stories-grid">
+        <ul class="stories-grid" role="list">
             <!-- Card 1: Giovanna -->
-            <div class="story-card">
-                <img src="../assets/img/giovanna.png" alt="Giovanna" class="story-image">
+            <li>
+            <article class="story-card">
+                <img src="../assets/img/giovanna.png" alt="Foto de Giovanna" class="story-image">
                 <div class="story-content">
-                    <div class="quote-section">
-                        <img src="../assets/icons/aspas.png" alt="Aspas" class="quote-img">
+                    <blockquote class="quote-section">
+                        <img src="../assets/icons/aspas.png" alt="" class="quote-img">
                         <p class="story-text">"Receber sangue foi receber uma segunda chance. Sou muito grata a cada doador que tornou isso possível."</p>
-                    </div>
+                    </blockquote>
                     <div class="story-footer">
-                        <div class="story-info">
-                            <div class="story-name">Giovanna</div>
-                            <div class="story-detail">Recebeu doações em 2022</div>
-                        </div>
-                        <img src="../assets/icons/coracao2.png" alt="Ícone Coração" class="heart-icon-img">
+                        <footer class="story-info">
+                            <cite class="story-name">Giovanna</cite>
+                            <span class="story-detail">Recebeu doações em 2022</span>
+                        </footer>
+                        <img src="../assets/icons/coracao2.png" alt="" class="heart-icon-img">
                     </div>
                 </div>
-            </div>
+            </article>
+            </li>
 
             <!-- Card 2: Manuel -->
-            <div class="story-card">
-                <img src="../assets/img/manuel.png" alt="Manuel" class="story-image">
+            <li>
+            <article class="story-card">
+                <img src="../assets/img/manuel.png" alt="Foto de Manuel" class="story-image">
                 <div class="story-content">
-                    <div class="quote-section">
-                        <img src="../assets/icons/aspas.png" alt="Aspas" class="quote-img">
+                    <blockquote class="quote-section">
+                        <img src="../assets/icons/aspas.png" alt="" class="quote-img">
                         <p class="story-text">"Doar sangue virou hábito. Saber que posso ajudar alguém que eu nem conheço me faz uma pessoa melhor."</p>
-                    </div>
+                    </blockquote>
                     <div class="story-footer">
-                        <div class="story-info">
-                            <div class="story-name">Manuel</div>
-                            <div class="story-detail">Doador desde 2019</div>
-                        </div>
-                        <img src="../assets/icons/coracao2.png" alt="Ícone Coração" class="heart-icon-img">
+                        <footer class="story-info">
+                            <cite class="story-name">Manuel</cite>
+                            <span class="story-detail">Doador desde 2019</span>
+                        </footer>
+                        <img src="../assets/icons/coracao2.png" alt="" class="heart-icon-img">
                     </div>
                 </div>
-            </div>
+            </article>
+            </li>
 
             <!-- Card 3: Marcia -->
-            <div class="story-card">
-                <img src="../assets/img/marcia.png" alt="Marcia" class="story-image">
+            <li>
+            <article class="story-card">
+                <img src="../assets/img/marcia.png" alt="Foto de Marcia" class="story-image">
                 <div class="story-content">
-                    <div class="quote-section">
-                        <img src="../assets/icons/aspas.png" alt="Aspas" class="quote-img">
+                    <blockquote class="quote-section">
+                        <img src="../assets/icons/aspas.png" alt="" class="quote-img">
                         <p class="story-text">"Meu filho precisou de várias transfusões durante o tratamento. A doação de sangue foi essencial para a recuperação dele."</p>
-                    </div>
+                    </blockquote>
                     <div class="story-footer">
-                        <div class="story-info">
-                            <div class="story-name">Marcia</div>
-                            <div class="story-detail">Mãe de paciente</div>
-                        </div>
-                        <img src="../assets/icons/coracao2.png" alt="Ícone Coração" class="heart-icon-img">
+                        <footer class="story-info">
+                            <cite class="story-name">Marcia</cite>
+                            <span class="story-detail">Mãe de paciente</span>
+                        </footer>
+                        <img src="../assets/icons/coracao2.png" alt="" class="heart-icon-img">
                     </div>
                 </div>
-            </div>
+            </article>
+            </li>
 
             <!-- Card 4: Carlos -->
-            <div class="story-card">
-                <img src="../assets/img/carlos.png" alt="Carlos" class="story-image">
+            <li>
+            <article class="story-card">
+                <img src="../assets/img/carlos.png" alt="Foto de Carlos" class="story-image">
                 <div class="story-content">
-                    <div class="quote-section">
-                        <img src="../assets/icons/aspas.png" alt="Aspas" class="quote-img">
+                    <blockquote class="quote-section">
+                        <img src="../assets/icons/aspas.png" alt="" class="quote-img">
                         <p class="story-text">"Comecei a doar sangue após me aposentar. É minha forma de continuar fazendo a diferença na vida das pessoas."</p>
-                    </div>
+                    </blockquote>
                     <div class="story-footer">
-                        <div class="story-info">
-                            <div class="story-name">Carlos</div>
-                            <div class="story-detail">Doador desde 2016</div>
-                        </div>
-                        <img src="../assets/icons/coracao2.png" alt="Ícone Coração" class="heart-icon-img">
+                        <footer class="story-info">
+                            <cite class="story-name">Carlos</cite>
+                            <span class="story-detail">Doador desde 2016</span>
+                        </footer>
+                        <img src="../assets/icons/coracao2.png" alt="" class="heart-icon-img">
                     </div>
                 </div>
-            </div>
-        </div>
+            </article>
+            </li>
+        </ul>
     </div>
 
     <!-- SEÇÃO DE CONVITE -->
@@ -101,10 +113,16 @@
         <h2 class="invitation-title">Quer mostrar sua história<br>no nosso site?</h2>
         <p class="invitation-text">Mande um e-mail para a gente:</p>
         <a href="mailto:historias@sanguebom.org.br" class="email-button">
-            <img src="../assets/icons/email.png" alt="email" class="email-icon-img">
+            <img src="../assets/icons/email.png" alt="" class="email-icon-img">
             historias@sanguebom.org.br
         </a>
     </div>
-    <script src="../components/layout.js" defer></script>
+    </main>
+    <script src="../components/js/core.js" defer></script>
+    <script src="../components/js/header.js" defer></script>
+    <script src="../components/js/footer.js" defer></script>
+    <script src="../components/js/cta.js" defer></script>
+    <script src="../components/js/acessibilidade.js" defer></script>
+    <script src="../components/js/main.js" defer></script>
 </body>
 </html>
