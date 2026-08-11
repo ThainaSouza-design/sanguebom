@@ -1,13 +1,3 @@
-/* ==========================================================
-   Componente: Chamada "Já conferiu tudo?" (CTA)
-   Estilos isolados para a seção injetada por components/js/cta.js.
-   Seletores restritos a .cta-doar para não afetar o CSS próprio
-   de cada página.
-   ========================================================== */
-
-/* Blindagem: neutraliza resets globais agressivos de algumas páginas
-   (ex.: `* { text-transform: capitalize; overflow-x: hidden }`) que
-   vazariam para dentro do componente injetado. */
 .cta-doar,
 .cta-doar * {
   box-sizing: border-box;

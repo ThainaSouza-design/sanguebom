@@ -1,13 +1,3 @@
-/* ==========================================================
-   Componente: Rodapé
-   Estilos isolados para o footer injetado por components/js/footer.js.
-   Seletores restritos a .footer para não afetar o CSS próprio
-   de cada página.
-   ========================================================== */
-
-/* Blindagem: neutraliza resets globais agressivos de algumas páginas
-   (ex.: `* { text-transform: capitalize; overflow-x: hidden }`) que
-   vazariam para dentro do componente injetado. */
 .footer,
 .footer * {
   box-sizing: border-box;

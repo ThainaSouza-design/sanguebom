@@ -1,12 +1,3 @@
-/* ==========================================================
-   Componente: Acessibilidade
-   Skip link, widget VLibras, painel de acessibilidade (fonte,
-   cores, imagens, lupa) e redução de movimento. Estilos para os
-   elementos injetados por components/js/acessibilidade.js.
-   ========================================================== */
-
-/* ---------- Skip link ---------- */
-
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -24,8 +15,6 @@
   left: 0;
 }
 
-/* ---------- Reduzir movimento ---------- */
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -36,8 +25,6 @@
     scroll-behavior: auto !important;
   }
 }
-
-/* ---------- Efeitos do painel ---------- */
 
 html.a11y-fonte-legivel * {
   font-family: Arial, Verdana, sans-serif !important;
@@ -59,10 +46,6 @@ html.a11y-sem-imagens img {
   visibility: hidden !important;
 }
 
-/* ---------- Força o botão do VLibras (posição definida pelo
-   próprio script deles) a ficar ancorado no canto inferior direito,
-   pra nosso botão poder ficar exatamente ao lado dele. ---------- */
-
 div[vw-access-button] {
   position: fixed !important;
   top: auto !important;
@@ -76,8 +59,6 @@ div[vw-access-button] {
 div[vw-access-button].a11y-vlibras-pronto {
   opacity: 1;
 }
-
-/* ---------- Botão + painel ---------- */
 
 .a11y-abrir {
   position: fixed;
@@ -260,8 +241,6 @@ div[vw-access-button].a11y-vlibras-pronto {
 .a11y-restaurar:hover {
   background: #700000;
 }
-
-/* ---------- Lupa de conteúdo ---------- */
 
 .a11y-lupa {
   position: fixed;

@@ -1,16 +1,8 @@
-/* ==========================================================
-   Componente: Cabeçalho (menu)
-   Monta o <header> com a navegação principal, o botão "Quero
-   Doar" e o menu mobile (hambúrguer). Depende de components/js/core.js.
-   ========================================================== */
 (function () {
   "use strict";
 
   var SB = window.SBLayout;
 
-  // Itens do menu. Cada item leva à sua própria página; o destaque
-  // (classe "start") vai para a página atual. Contato fica sem
-  // função por enquanto.
   var navItems = [
     { key: "inicio", href: SB.root + "index.html", label: "Início" },
     { key: "quem", href: SB.pagesDir + "criterios.html", label: "Quem Pode Doar" },
@@ -53,9 +45,6 @@
     "  </div>" +
     "</header>";
 
-  // Menu mobile (hambúrguer): abre/fecha o .navbar em telas estreitas.
-  // O painel usa position:absolute (ver CSS), então abrir/fechar nunca
-  // muda header.offsetHeight — é isso que mantém fixHeaderSpacing() correto.
   function bindNavToggle() {
     var toggle = document.getElementById("nav-toggle");
     var nav = document.getElementById("site-nav");
@@ -111,11 +100,6 @@
     }
   }
 
-  // O header fica fixo no topo (position: fixed), então some do fluxo
-  // normal da página. Aqui reservamos, dinamicamente, o mesmo espaço no
-  // topo do body (e no scroll para os links âncora, como "Contato") do
-  // tamanho real do header, já que sua altura varia entre páginas e
-  // larguras de tela.
   function fixHeaderSpacing() {
     var header = document.querySelector(".header");
     if (!header) return;
@@ -147,10 +131,6 @@
     bindNavToggle();
   }
 
-  // Link "Pular para o conteúdo": fica invisível até receber foco (Tab),
-  // permitindo que quem navega por teclado pule o cabeçalho/menu.
-  // Precisa ser inserido por último em body.firstChild para ficar antes
-  // do header (que já ocupa essa posição nas páginas sem #site-header).
   function mountSkipLink() {
     var alvo = document.getElementById("conteudo-principal");
     if (!alvo) return;

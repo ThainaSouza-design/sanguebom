@@ -1,17 +1,7 @@
-/* ==========================================================
-   Componente: Cabeçalho / Menu
-   Estilos isolados para o header injetado por components/js/header.js.
-   Seletores restritos a .header para não afetar o CSS próprio
-   de cada página.
-   ========================================================== */
-
 html {
   scroll-behavior: smooth;
 }
 
-/* Blindagem: neutraliza resets globais agressivos de algumas páginas
-   (ex.: `* { text-transform: capitalize; overflow-x: hidden }`) que
-   vazariam para dentro do componente injetado. */
 .header,
 .header * {
   box-sizing: border-box;
@@ -168,9 +158,6 @@ html {
     position: relative;
   }
 
-  /* O dropdown aberto sempre mostra os 7 links, em qualquer largura
-     dentro desse teto — o colapso progressivo abaixo só afeta o menu
-     fechado (.navbar:not(.is-open)). */
   .navbar.is-open {
     display: flex;
     position: absolute;
@@ -195,9 +182,6 @@ html {
   }
 }
 
-/* Colapso progressivo: conforme a tela diminui, os links somem um a um
-   (do último para o primeiro) do menu fechado, sempre acessíveis pelo
-   hambúrguer — evita o "salto" de tudo pra vazio de uma vez. */
 @media (max-width: 1500px) {
   .navbar:not(.is-open) a:nth-last-child(-n + 1) {
     display: none;

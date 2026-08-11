@@ -1,8 +1,3 @@
-/* ==========================================================
-   Componente: Chamada "Já conferiu tudo?" (CTA)
-   Seção que fica logo acima do rodapé, incentivando a doação.
-   Depende de components/js/core.js.
-   ========================================================== */
 (function () {
   "use strict";
 

@@ -1,8 +1,3 @@
-/* ==========================================================
-   Componente: Rodapé
-   Monta o <footer> com links rápidos, institucional e contato.
-   Depende de components/js/core.js.
-   ========================================================== */
 (function () {
   "use strict";
 

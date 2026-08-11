@@ -1,8 +1,3 @@
-/* ==========================================================
-   Sangue Bom — Seções (Requisitos, Benefícios, Histórias, Patrocinadores)
-   Apenas HTML + CSS puro. HTML semântico e acessível.
-   ========================================================== */
-
 :root {
   --vermelho: #DD1D27;
   --vermelho-escuro: #920000;
@@ -41,14 +36,11 @@ a {
   color: inherit;
 }
 
-/* Foco visível para navegação por teclado */
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--vermelho-escuro);
   outline-offset: 3px;
 }
-
-/* ---------- Acessibilidade: skip link ---------- */
 
 .skip-link {
   position: absolute;
@@ -196,9 +188,6 @@ button:focus-visible {
     position: relative;
   }
 
-  /* O dropdown aberto sempre mostra os 7 links, em qualquer largura
-     dentro desse teto — o colapso progressivo abaixo só afeta o menu
-     fechado (.navbar:not(.is-open)). */
   .navbar.is-open {
     display: flex;
     position: absolute;
@@ -223,9 +212,6 @@ button:focus-visible {
   }
 }
 
-/* Colapso progressivo: conforme a tela diminui, os links somem um a um
-   (do último para o primeiro) do menu fechado, sempre acessíveis pelo
-   hambúrguer — evita o "salto" de tudo pra vazio de uma vez. */
 @media (max-width: 1500px) {
   .navbar:not(.is-open) a:nth-last-child(-n + 1) {
     display: none;
@@ -343,8 +329,6 @@ button:focus-visible {
   }
 }
 
-/* ---------- Acessibilidade: efeitos do painel ---------- */
-
 html.a11y-fonte-legivel * {
   font-family: Arial, Verdana, sans-serif !important;
 }
@@ -366,10 +350,6 @@ html.a11y-sem-imagens img {
 }
 
 
-/* ---------- Acessibilidade: força o botão do VLibras (posição definida
-   pelo próprio script deles) a ficar ancorado no canto inferior direito,
-   pra nosso botão poder ficar exatamente ao lado dele. ---------- */
-
 div[vw-access-button] {
   position: fixed !important;
   top: auto !important;
@@ -383,8 +363,6 @@ div[vw-access-button] {
 div[vw-access-button].a11y-vlibras-pronto {
   opacity: 1;
 }
-
-/* ---------- Acessibilidade: botão + painel ---------- */
 
 .a11y-abrir {
   position: fixed;
@@ -568,8 +546,6 @@ div[vw-access-button].a11y-vlibras-pronto {
   background: #700000;
 }
 
-/* ---------- Acessibilidade: lupa de conteúdo ---------- */
-
 .a11y-lupa {
   position: fixed;
   width: 220px;
@@ -595,7 +571,6 @@ div[vw-access-button].a11y-vlibras-pronto {
   transform-origin: 0 0;
 }
 
-/* Esconde visualmente mas mantém acessível a leitores de tela */
 .oculto-visualmente {
   position: absolute;
   width: 1px;
@@ -606,14 +581,10 @@ div[vw-access-button].a11y-vlibras-pronto {
   white-space: nowrap;
 }
 
-/* ---------- Listas (remove marcadores, mantém a semântica de lista) ---------- */
-
 ul[role="list"] {
   list-style: none;
   padding: 0;
 }
-
-/* ---------- Imagens (ícones, fotos, logos) ---------- */
 
 .icone {
   display: block;
@@ -652,10 +623,6 @@ ul[role="list"] {
   max-height: 4rem;
   width: auto;
 }
-
-/* ==========================================================
-   HERO
-   ========================================================== */
 
 .secao-hero {
   position: relative;
@@ -754,10 +721,6 @@ ul[role="list"] {
   border: 2px solid var(--branco);
 }
 
-/* ==========================================================
-   0) DESTAQUES
-   ========================================================== */
-
 .lista-destaques {
   display: grid;
   grid-template-columns: 1fr;
@@ -805,10 +768,6 @@ ul[role="list"] {
   color: var(--tinta);
 }
 
-/* ==========================================================
-   0.5) POR QUE DOAR SANGUE
-   ========================================================== */
-
 .motivo-doacao {
   display: flex;
   flex-direction: column;
@@ -843,10 +802,6 @@ ul[role="list"] {
   flex-shrink: 0;
 }
 
-/* ==========================================================
-   1) REQUISITOS
-   ========================================================== */
-
 .lista-requisitos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -880,10 +835,6 @@ ul[role="list"] {
   height: 6.125rem;
   margin-bottom: 1rem;
 }
-
-/* ==========================================================
-   2) BENEFÍCIOS
-   ========================================================== */
 
 .secao-beneficios {
   background: var(--branco);
@@ -921,10 +872,6 @@ ul[role="list"] {
   line-height: 1.4;
   color: var(--tinta);
 }
-
-/* ==========================================================
-   3) HISTÓRIAS
-   ========================================================== */
 
 .lista-historias {
   display: grid;
@@ -985,10 +932,6 @@ ul[role="list"] {
   font-style: normal;
 }
 
-/* ==========================================================
-   4) PATROCINADORES
-   ========================================================== */
-
 .patrocinador-destaque {
   display: flex;
   flex-direction: column;
@@ -1043,10 +986,6 @@ ul[role="list"] {
   line-height: 1.6;
   color: var(--cinza);
 }
-
-/* ==========================================================
-   Responsivo — Desktop (>= 48rem / 768px)
-   ========================================================== */
 
 @media (min-width: 48rem) {
   .secao {

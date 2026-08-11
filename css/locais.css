@@ -47,10 +47,6 @@ body {
   padding: 0 1.5rem;
 }
 
-/* ==========================================================
-   HERO
-   ========================================================== */
-
 .secao-hero {
   position: relative;
   width: 100vw;
@@ -101,8 +97,6 @@ body {
   gap: 24px;
 }
 
-/* ---------- Título da seção ---------- */
-
 .cabecalho-secao {
   text-align: center;
 }
@@ -118,8 +112,6 @@ body {
 .titulo span {
   color: var(--vermelho-escuro);
 }
-
-/* ---------- Barra de busca / filtro / geolocalização ---------- */
 
 .locais-topbar {
   display: flex;
@@ -250,8 +242,6 @@ body {
 .locais-geo:hover {
   text-decoration: underline;
 }
-
-/* ---------- Lista + Mapa ---------- */
 
 .locais-painel {
   display: grid;
@@ -395,8 +385,6 @@ body {
   transform: scale(1.1);
 }
 
-/* ---------- Popup "Ver todas as unidades" ---------- */
-
 .locais-modal {
   position: fixed;
   inset: 0;
@@ -472,10 +460,6 @@ body {
   max-height: none;
 }
 
-/* ==========================================================
-   Benefícios de doar em um hemocentro
-   ========================================================== */
-
 .locais-garantias {
   padding: 2.5rem 0 4rem;
 }
@@ -521,8 +505,6 @@ body {
   color: var(--cinza);
 }
 
-/* ---------- Mapa (Google Maps) ---------- */
-
 .locais-mapa {
   position: relative;
   height: 420px;
@@ -542,10 +524,6 @@ body {
   color: var(--cinza-claro);
   font-size: 0.9rem;
 }
-
-/* ==========================================================
-   Responsivo — Desktop (>= 48rem / 768px)
-   ========================================================== */
 
 @media (min-width: 48rem) {
   .secao-hero {
@@ -568,8 +546,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
-/* ---------- Responsivo ---------- */
 
 @media (max-width: 860px) {
   .locais-painel {

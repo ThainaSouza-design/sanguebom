@@ -14,9 +14,6 @@
   </head>
   <body>
     <main id="conteudo-principal" class="conteudoPrincipal">
-      <!-- ============================================= -->
-      <!-- HERO: Encontre um hemocentro perto de você     -->
-      <!-- ============================================= -->
       <section class="secao-hero" aria-label="Encontre um hemocentro perto de você">
         <div class="contentor hero-conteudo">
           <h1 class="hero-titulo">Encontre um<br />hemocentro perto<br />de você.</h1>
@@ -24,9 +21,6 @@
         </div>
       </section>
 
-      <!-- ============================================= -->
-      <!-- Busca + lista de unidades + mapa               -->
-      <!-- ============================================= -->
       <section class="locais">
         <div class="locais-container">
 
@@ -34,10 +28,8 @@
             <h2 class="titulo">Encontre um <span>hemocentro</span></h2>
           </header>
 
-          <!-- Anuncia pra leitor de tela quando a lista de unidades muda (busca/filtro/geolocalização) -->
           <p id="locais-status-busca" class="oculto-visualmente" role="status" aria-live="polite"></p>
 
-          <!-- Barra de busca / filtro / geolocalização -->
           <div class="locais-topbar">
             <form class="locais-busca" id="locais-busca-form">
               <label class="oculto-visualmente" for="locais-busca-input">Buscar unidade por bairro, cidade ou CEP</label>
@@ -77,13 +69,10 @@
             </button>
           </div>
 
-          <!-- Lista de unidades + mapa -->
           <div class="locais-painel">
             <div class="locais-lista">
               <h2>Unidades próximas</h2>
 
-              <!-- Preenchida via JS (js/locais.js → renderizarLista) com
-                   todas as unidades reais; rola só aqui dentro. -->
               <ul class="locais-lista__itens" id="locais-lista-itens"></ul>
 
               <button type="button" class="locais-btn-todas" id="locais-ver-todas">
@@ -99,9 +88,6 @@
         </div>
       </section>
 
-      <!-- ============================================= -->
-      <!-- Benefícios de doar em um hemocentro            -->
-      <!-- ============================================= -->
       <section class="locais-garantias">
         <div class="contentor">
           <h2 class="locais-garantias__titulo">Ao doar em um hemocentro, você garante:</h2>
@@ -130,7 +116,6 @@
         </div>
       </section>
 
-      <!-- Popup com todas as unidades (abre ao clicar em "Ver todas as unidades") -->
       <div class="locais-modal" id="locais-modal">
         <div class="locais-modal__painel" role="dialog" aria-modal="true" aria-labelledby="locais-modal-titulo">
           <div class="locais-modal__cabecalho">

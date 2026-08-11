@@ -1,21 +1,6 @@
-/* ==========================================================
-   Locais de Doação — Google Maps
-   Cria o mapa, os marcadores das unidades, liga a lista da
-   esquerda ao mapa (clique na lista abre o marcador e vice-versa)
-   e liga busca por endereço + geolocalização + filtro por tipo.
-   Chamado pelo callback do script da Google Maps JavaScript API.
-
-   Dados extraídos da lista oficial de postos de coleta da
-   Secretaria de Estado da Saúde de SP — Capital, Grande São Paulo e
-   Interior:
-   https://saude.sp.gov.br/.../locais-para-doacao-de-sangue-no-estado
-   Coordenadas são aproximadas por bairro/endereço/cidade (sem geocoding).
-   ========================================================== */
 (function () {
   "use strict";
 
-  // Todas viram cartão na lista "Unidades próximas" (renderizarLista)
-  // e marcador no mapa; o índice de cada uma é usado em data-unidade.
   var unidades = [
     {
       nome: "Hemocentro da Santa Casa de São Paulo",
@@ -54,7 +39,6 @@
       lng: -46.658
     },
 
-    // Demais unidades da capital
     {
       nome: "Hospital do Servidor Público Municipal",
       tipo: "Hospital",
@@ -291,13 +275,8 @@
     }
   ];
 
-  // Índice em que termina a capital dentro de `unidades` — usado para
-  // limitar o enquadramento inicial do mapa (fitBounds) só à capital,
-  // mesmo com Grande SP e Interior também na lista/marcadores.
   var FIM_CAPITAL = unidades.length;
 
-  // Grande São Paulo (Barueri, Diadema, Guarulhos, Osasco, Santo André,
-  // São Bernardo, São Caetano, Suzano) — mesma fonte oficial (SES-SP).
   unidades = unidades.concat([
     {
       nome: "Hospital Municipal Dr. Francisco Moran",
@@ -390,7 +369,6 @@
       lng: -46.3116
     },
 
-    // Interior de São Paulo — mesma fonte oficial (SES-SP).
     {
       nome: "Banco de Sangue e Adamantina",
       tipo: "Banco de Sangue",
@@ -861,10 +839,6 @@
     }
   ]);
 
-  // Ponto de referência padrão para a distância mostrada na lista
-  // (Praça da Sé, centro de São Paulo) até que o usuário busque um
-  // endereço ou use "Usar minha localização" — aí a lista é
-  // reordenada a partir do ponto real.
   var REFERENCIA = { lat: -23.5505, lng: -46.6333 };
 
   var PIN_SVG =
@@ -885,8 +859,6 @@
     return R * 2 * Math.atan2(Math.sqrt(sa), Math.sqrt(1 - sa));
   }
 
-  // Estado atual da lista: de onde a distância é calculada, em que
-  // ordem os índices aparecem e qual tipo está filtrado.
   var estado = {
     referencia: REFERENCIA,
     ordem: unidades.map(function (_, i) {
@@ -937,9 +909,6 @@
       .join("");
   }
 
-  // Monta os cartões de "Unidades próximas" a partir do estado atual
-  // (ordem/ponto de referência/filtro). Preenche tanto a lista da
-  // barra lateral (com rolagem) quanto o popup "Ver todas as unidades".
   function renderizarLista() {
     var indicesFiltrados = estado.tipo
       ? estado.ordem.filter(function (indice) {
@@ -964,9 +933,6 @@
     }
   }
 
-  // Aplica um novo ponto de referência (busca ou geolocalização):
-  // reordena a lista pelas unidades mais próximas dali e recentraliza
-  // o mapa. Substitui o marcador azul de "ponto de referência" anterior.
   var marcadorReferencia = null;
 
   function aplicarPontoReferencia(pontoReferencia, tituloMarcador) {
@@ -1008,11 +974,9 @@
     fillOpacity: 1,
     strokeWeight: 0,
     scale: 1.7,
-    anchor: null // preenchido depois que google.maps.Point existir
+    anchor: null
   };
 
-  // Some/mostra os pins no mapa de acordo com o filtro de tipo atual
-  // (mesma lógica de estado.tipo usada na lista).
   function atualizarMarcadoresVisiveis() {
     if (!map) return;
     markers.forEach(function (marker, indice) {
@@ -1033,9 +997,6 @@
     infoWindow.open(map, marker);
   }
 
-  // Delegação de evento: funciona mesmo depois da lista ser
-  // reconstruída (busca, geolocalização, filtro trocam o innerHTML).
-  // Usada tanto na lista da lateral quanto no popup "Ver todas".
   function ligarCliquesDaLista(containerId, aoClicar) {
     var container = document.getElementById(containerId);
     if (!container) return;
@@ -1055,7 +1016,6 @@
     });
   }
 
-  // Abre/fecha o popup "Ver todas as unidades".
   function ligarModal() {
     var botaoAbrir = document.getElementById("locais-ver-todas");
     var modal = document.getElementById("locais-modal");
@@ -1084,7 +1044,6 @@
       if (e.key === "Escape" && modal.classList.contains("is-open")) fecharModal();
     });
 
-    // Clicar numa unidade dentro do popup também fecha ele.
     ligarCliquesDaLista("locais-modal-itens", fecharModal);
   }
 
@@ -1106,8 +1065,6 @@
     });
   }
 
-  // Busca por bairro/cidade/CEP: geocodifica o texto (via Geocoding
-  // API) e usa o resultado como novo ponto de referência da lista.
   function ligarBusca() {
     var form = document.getElementById("locais-busca-form");
     var input = document.getElementById("locais-busca-input");
@@ -1134,9 +1091,6 @@
     });
   }
 
-  // Filtro "Todas as unidades / Hemocentros / Hospitais / Bancos de Sangue"
-  // — dropdown customizado (sem <select> nativo) pra combinar com o
-  // resto do site.
   function ligarFiltro() {
     var wrapper = document.getElementById("locais-filtro");
     var botao = document.getElementById("locais-filtro-botao");
@@ -1188,7 +1142,6 @@
     });
   }
 
-  // Exposta globalmente: é o callback usado pelo <script> da Google Maps API.
   window.initLocaisMap = function () {
     pinIcon.anchor = new google.maps.Point(12, 22);
 
@@ -1217,9 +1170,6 @@
         abrirInfo(marker, unidade);
       });
       markers.push(marker);
-      // Enquadramento inicial considera só a capital — Grande SP e
-      // Interior ficam nos marcadores/lista, mas não abrem o mapa
-      // inteiro do estado já na primeira visita.
       if (indice < FIM_CAPITAL) limites.extend(posicao);
     });
 

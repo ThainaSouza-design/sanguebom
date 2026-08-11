@@ -1,18 +1,8 @@
-/* ==========================================================
-   Componente: Acessibilidade
-   Widget VLibras (Libras) + painel próprio de acessibilidade
-   (fonte, cores, imagens, lupa). Preferências salvas em
-   localStorage e reaplicadas em toda navegação (site multi-página).
-   Depende de components/js/core.js.
-   ========================================================== */
 (function () {
   "use strict";
 
   var SB = window.SBLayout;
 
-  // Widget oficial do governo (VLibras): traduz o conteúdo da página para
-  // Língua Brasileira de Sinais. Script carregado sob demanda a partir do
-  // domínio oficial vlibras.gov.br.
   function mountVLibras() {
     if (document.querySelector("[vw]")) return;
 
@@ -35,11 +25,6 @@
     document.body.appendChild(script);
   }
 
-  // O VLibras posiciona o próprio botão via JS deles (não é confiável
-  // sobrescrever só por CSS). Aqui a gente mede onde o botão do VLibras
-  // realmente está na tela e encosta o nosso botão/painel bem ao lado,
-  // com algumas tentativas porque o widget deles carrega de forma
-  // assíncrona e pode levar um instante pra aparecer.
   function a11ySincronizarComVLibras(tentativasRestantes, rectAnterior) {
     var vlibrasBotao = document.querySelector("[vw-access-button]");
     var meuBotao = document.getElementById("a11y-abrir");
@@ -51,8 +36,6 @@
           a11ySincronizarComVLibras(tentativasRestantes - 1);
         }, 400);
       } else {
-        // Não deu pra medir a posição, mas melhor mostrar os botões
-        // (mesmo sem sincronia perfeita) do que deixá-los invisíveis pra sempre.
         if (vlibrasBotao) vlibrasBotao.classList.add("a11y-vlibras-pronto");
         meuBotao.classList.add("a11y-vlibras-pronto");
       }
@@ -61,10 +44,6 @@
 
     var rect = vlibrasBotao.getBoundingClientRect();
 
-    // O botão deles já existe (offsetWidth > 0) mas ainda pode estar no meio
-    // da animação de entrada deles (desliza de baixo pra cima). Só finaliza
-    // quando a posição parar de mudar entre duas medições — senão a gente
-    // trava nosso botão numa posição provisória e ele "sobe" atrás deles.
     var parado = rectAnterior &&
       Math.abs(rect.top - rectAnterior.top) < 1 &&
       Math.abs(rect.left - rectAnterior.left) < 1;
@@ -93,11 +72,6 @@
     meuBotao.style.setProperty("bottom", "auto", "important");
   }
 
-  // ---------------------------------------------------------------
-  // Painel de acessibilidade próprio (fonte, cores, imagens, lupa).
-  // Fica ao lado do ícone do VLibras. Preferências salvas em
-  // localStorage e reaplicadas em toda navegação (site multi-página).
-  // ---------------------------------------------------------------
   var A11Y_CHAVE = "sangueBom:a11yPainel";
   var A11Y_PADRAO = {
     fonteTamanho: 0,
@@ -131,22 +105,16 @@
           if (salvo.hasOwnProperty(chave)) estado[chave] = salvo[chave];
         }
       }
-    } catch (e) {
-      // localStorage indisponível ou valor inválido: segue com o padrão.
-    }
+    } catch (e) {}
     return estado;
   }
 
   function a11ySalvarEstado(estado) {
     try {
       localStorage.setItem(A11Y_CHAVE, JSON.stringify(estado));
-    } catch (e) {
-      // Armazenamento indisponível (ex.: modo privado) — ignora.
-    }
+    } catch (e) {}
   }
 
-  // Filtros SVG de simulação de daltonismo (matrizes padrão de
-  // aproximação de protanopia/deuteranopia/tritanopia).
   function a11yInjetarFiltrosSVG() {
     if (document.getElementById("a11y-filtros-svg")) return;
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -165,10 +133,6 @@
     document.body.appendChild(svg);
   }
 
-  // Contraste, intensidade e daltonismo usam a mesma propriedade CSS
-  // (filter) no <html>, então precisam ser combinados numa única string
-  // em vez de cada um mexer em filter isoladamente (o que sobrescreveria
-  // os outros).
   function a11yFiltroCombinado(estado) {
     var partes = [];
     if (estado.contraste) partes.push("invert(1) hue-rotate(180deg)");
@@ -206,11 +170,6 @@
     a11yLupaConteudo.style.transform = "scale(" + zoom + ") translate(" + tx + "px, " + ty + "px)";
   }
 
-  // Lupa de conteúdo: clona o <body> uma vez por ativação e usa
-  // transform (scale + translate) pra ampliar, em tempo real, o trecho
-  // sob o cursor dentro de uma lente circular. Como é um clone estático,
-  // conteúdo que muda dinamicamente (ex.: busca de locais.html) só
-  // atualiza dentro da lente se ela for desativada e reativada.
   function a11yAtualizarLupa(ativa) {
     if (ativa) {
       if (!a11yLupaEl) {
@@ -368,7 +327,6 @@
       }
     });
 
-    // Clicar no fundo escurecido (fora do cartão do painel) fecha.
     painel.addEventListener("click", function (e) {
       if (e.target === painel) fecharPainel();
     });
@@ -397,9 +355,7 @@
       for (chave in A11Y_PADRAO) a11yEstado[chave] = A11Y_PADRAO[chave];
       try {
         localStorage.removeItem(A11Y_CHAVE);
-      } catch (e) {
-        // Armazenamento indisponível — ignora.
-      }
+      } catch (e) {}
       a11yAplicar(a11yEstado);
       a11yAtualizarUI();
     });
